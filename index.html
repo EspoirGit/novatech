@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <title>Novatech Consulting</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-950 py-8 px-4 sm:px-6 lg:px-8"> 
+    <img src="img/favicon.png" alt="" width="150" height="150" class="mx-auto -mt-8">
+    <div class="mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+      <h1
+        class="bg-blue-700 text-white text-center py-4 font-bold uppercase tracking-wide"
+      >
+        Formulaire de facture
+      </h1>
+
+      <form action="https://novatech-facture.000webhostapp.com/data.php" method="post" class="px-6 py-4">
+        <div class="mb-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="nomPrestataire"
+                class="block text-sm font-medium text-gray-700"
+                >Nom du Prestataire :</label
+              >
+              <input
+                type="text"
+                id="nomPrestataire"
+                name="nomPrestataire"
+                required
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+              />
+            </div>
+            <div>
+              <label
+                for="prenomPrestataire"
+                class="block text-sm font-medium text-gray-700"
+                >Prénom du Prestataire :</label
+              >
+              <input
+                type="text"
+                id="prenomPrestataire"
+                name="prenomPrestataire"
+                required
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+              />
+            </div>
+            <div>
+              <label
+                for="contactPrestataire"
+                class="block text-sm font-medium text-gray-700"
+                >Contact du Prestataire :</label
+              >
+              <input
+                type="text"
+                id="contactPrestataire"
+                name="contactPrestataire"
+                required
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                for="numeroFacture"
+                class="block text-sm font-medium text-gray-700"
+                >Numéro de facture :</label
+              >
+              <input
+                type="text"
+                id="numeroFacture"
+                name="numeroFacture"
+                value="N°"
+                required
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+              />
+            </div>
+            <div>
+              <label
+                for="dateFacture"
+                class="block text-sm font-medium text-gray-700"
+                >Date de la facture:</label
+              >
+              <input
+                type="date"
+                id="dateFacture"
+                name="dateFacture"
+                required
+                class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full whitespace-nowrap mb-4">
+            <thead>
+              <tr>
+                <th
+                  class="px-6 py-3 bg-blue-700 text-white text-center text-xs font-medium uppercase tracking-wider"
+                >
+                  Description
+                </th>
+                <th
+                  class="px-6 py-3 bg-blue-700 text-white text-center text-xs font-medium uppercase tracking-wider"
+                >
+                  Quantité
+                </th>
+                <th
+                  class="px-6 py-3 bg-blue-700 text-white text-center text-xs font-medium uppercase tracking-wider"
+                >
+                  Prix unitaire
+                </th>
+                <th
+                  class="px-6 py-3 bg-blue-700 text-white text-center text-xs font-medium uppercase tracking-wider"
+                >
+                  Total
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="text"
+                    name="description1"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="quantite1"
+                    min="1"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="prixUnitaire1"
+                    step="0.01"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap flex justify-center">
+                  <span class="total text-center">0.00</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="text"
+                    name="description2"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="quantite2"
+                    min="1"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="prixUnitaire2"
+                    step="0.01"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap flex justify-center">
+                  <span class="total text-center">0.00</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="text"
+                    name="description3"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="quantite3"
+                    min="1"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="prixUnitaire3"
+                    step="0.01"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap flex justify-center">
+                  <span class="total text-center">0.00</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="text"
+                    name="description4"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="quantite4"
+                    min="1"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap">
+                  <input
+                    type="number"
+                    name="prixUnitaire4"
+                    step="0.01"
+                    class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-grey border-2 rounded-md p-2"
+                  />
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap flex justify-center">
+                  <span class="total text-center">0.00</span>
+                </td>
+              </tr>
+              <!-- Ajoutez d'autres lignes pour plus d'articles -->
+              <tr>
+                <td colspan="3" class="px-6 py-4 whitespace-no-wrap text-right">
+                  <strong>Total général:</strong>
+                </td>
+                <td class="px-6 py-4 whitespace-no-wrap flex justify-center">
+                  <span id="totalGeneral">0.00</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <button
+          type="submit"
+          name="sub"
+          class="w-full bg-blue-700 text-white py-2 px-4 rounded-md hover:bg-blue-900"
+        >
+          Générer la facture
+        </button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS (facultatif si vous n'utilisez pas de fonctionnalités JavaScript de Bootstrap) -->
+    <script src="script/script.js"></script>
+  </body>
+</html>

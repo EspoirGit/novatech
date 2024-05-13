@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facture Novatech</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   
+    <img src="https://ake-facture.000webhostapp.com/head-nova.png" alt="">
+
+    
+    <div class="max-w-3xl mx-auto p-8 bg-white rounded -mt-28">
+    
+      <div class="flex flex-col justify-end text-left">
+        <div class="text-lg text-right"> <span class="font-bold">Facture : </span> {{facture.numero}} </div>
+        <div class="flex mt-2">
+          <div class="ml-2 text-right w-full"> <span class="font-bold">Date :</span> {{facture.date}} </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between mt-4 mb-4">
+        <div class="mt-4">
+          <p class="text-lg font-bold">AKE Agro Production</p>
+          <div class="flex mt-2">
+            <p class="text-gray-700 font-bold">Ifu :</p>
+            <span class="ml-2">0202329537262</span>
+          </div>
+          <div class="flex mt-2">
+            <p class="text-gray-700 font-bold">RCCM :</p>
+            <span class="ml-2">COTONOU Nº RB/ABC/24 A 103985</span>
+          </div>
+          <div class="flex mt-2">
+            <p class="text-gray-700 font-bold">Adresse :</p>
+            <span class="ml-2">Pahou Centre</span>
+          </div>
+          <div class="flex mt-2">
+            <p class="text-gray-700 font-bold">Contact :</p>
+            <span class="ml-2">61 16 35 43 / 69 24 24 07</span>
+          </div>
+        </div>
+        <div class="mt-4">
+            <p class="text-lg font-bold">Prestataire</p>
+            <div class="flex mt-2">
+              <p class="text-gray-700 font-bold">Nom :</p>
+              <span class="ml-2"> {{Prestataire.nom}} </span>
+            </div>
+            <div class="flex mt-2">
+              <p class="text-gray-700 font-bold">Prénom :</p>
+              <span class="ml-2"> {{Prestataire.prenom}} </span>
+            </div>
+            <div class="flex mt-2">
+              <p class="text-gray-700 font-bold">Contact :</p>
+              <span class="ml-2"> {{Prestataire.contact}} </span>
+            </div>
+          </div>
+      </div>
+      <div class="mt-4">
+        <table class="w-full border-collapse">
+          <thead class="bg-blue-400">
+            <tr class=" text-white">
+              <th class="border p-2 text-center border-blue-400 ">Nom</th>
+              <th class="border p-2 text-center border-blue-400 ">Qté</th>
+              <th class="border p-2 text-center border-blue-400 ">Prix Unitaire</th>
+              <th class="border p-2 text-center border-blue-400 ">Montant TTC</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for article in articles %}
+            <tr>
+              <td class="border p-2"> {{article.description}} </td>
+              <td class="border p-2 text-center"> {{article.quantite}}kg</td>
+              <td class="border p-2 text-center"> {{article.prix_unitaire}}f </td>
+              <td class="border p-2 text-center"> {{article.total}}Fcfa </td>
+            </tr>
+         {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="flex justify-end">
+        <div class="flex justify-between border-4 border-blue-400 p-1 w-2/3 text-right rounded-full pr-5 pl-5 my-5">
+            <div class="">
+                Total Général en chiffres :
+            </div>
+            <div><span class="font-bold"> {{total_general}} </span> FCFA</div>
+        </div>
+    </div>
+      <div class="flex justify-end">
+        <div class="flex justify-between border-4 border-blue-400 p-1 w-2/3 text-right rounded-full pr-5 pl-5">
+            <div class="">
+                Total Général en lettres :
+            </div>
+            <div><span class="font-bold"> {{totalinletter}} </span> FCFA</div>
+        </div>
+    </div>
+      <div class="mt-11 flex flex-col justify-center w-2/3 ml-60 pl-8">
+        <img src="https://ake-facture.000webhostapp.com/signature.jpg" alt="" srcset="" width="250" height="400" class="mb-2 mt-11 ">
+        <h3>TECOTAN Hounyi Jacques Geraud <span class="text-center font-bold">(CEO)</span></h3>
+      </div>
+    </div>
+  </body>
+</html>
